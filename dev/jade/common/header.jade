@@ -1,0 +1,27 @@
+header.main-header
+	.header-top
+		.container
+			.header-top__logo
+				img(class="header-top__logo-img" src="common/img/logo-img.png")
+				img(class="header-top__logo-text" src="common/img/logo-text.png")
+			ul.socials__list
+				-var socials = ['','fb','tw','in']
+				each social in socials
+					li(class="socials__item social__item_" + social)
+						a(class="social__link social__link_" + social href="#")= social
+			ul.language__list
+				-var items = ['ita', 'eng']
+				each item in items
+					li(class="language__item language__item_" + item)
+						a(class="language__link language__link_" + item href="#")= item
+			.header-top__tagline
+				| Uno spazio per valorizzare te stesso con il lavoro
+	.header-bottom
+		.container
+			nav.header-bottom__nav
+				ul.nav__list
+					-var items = ['home', 'percorsi', 'archivo', 'servizi']
+					each item in items
+						li(class='nav__item nav__item_' + item)
+							a(class="nav__link nav__link_" + item href="##")= item
+

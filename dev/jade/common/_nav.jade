@@ -1,0 +1,30 @@
+nav.menu
+	a(class="menu__link menu__link_home"  href="index.html")
+		img(src='common/img/ym-logo-min.svg')
+	ul.menu__list
+		-
+			var items = 
+			{
+				'Услуги': 'services',
+				'Цены':'price',
+				'Клиенты':'clients',
+				'Заслуги':'thanks',
+				'O Нас':'about',
+				'Обратная связь':'feedback',
+				'Контакты':'contacts'
+			}
+		each val,key in items
+			li.menu__item
+				if (val == 'about')
+					a(class="menu__link menu__link_" + val href="temp.html")= key
+				else
+					if (val == 'price')
+						a(class="menu__link menu__link_" + val href="temp.html")= key
+					else
+						a(class="menu__link page-nav menu__link_" + val href="#" + val)= key
+	//- .menu__contacts_nav
+	//- 	.socials_nav
+	//- 		a(class="link_nav" href="#")
+	//- 			i.fa.fa-vk
+	//- 		a(class="link_nav" href="#")
+	//- 			i.fa.fa-instagram

@@ -1,0 +1,48 @@
+footer.main-footer
+	.copyright
+		a(href="dimchu.ru")
+			| 2016 © Яркий Мир
+	.list__container
+		ul.main-footer__list
+			li.main-footer__item
+				ul.main-footer__inner-list
+					-
+						var items = 
+						{
+							"about": "О Нас",
+							"outside": "Широкоформатная печать",
+							"inside": "Интерьерная печать",
+							"freza": "Фрезерно-гравировальные работы",
+							"flags": "Изготовление флагов"
+						}
+					each val, key in items
+						li.main-footer__inner-item
+							a(href='temp.html' class="main-footer__inner-link")= val
+			li.main-footer__item
+				ul.main-footer__inner-list
+					-
+						var items = 
+						{
+							'instalation': "Монтаж рекламы",
+							'construction': "Изготовление рекламных конструкций",
+							'tipography': 'Цифровая печать',
+							't-shirt': 'Печать на футболках',
+							'placement': "Размещение рекламы"
+						}
+					each val, key in items
+						li.main-footer__inner-item
+							a(href='temp.html' class="main-footer__inner-link")= val
+			li.main-footer__item
+				ul.main-footer__inner-list
+					-
+						var items = 
+						{
+							'phone1': "+7 (3812) 332-582",
+							'phone2': "+7 (3812) 332-582",
+							'email1': 'ym.omsk@yandex.ru',
+							'email2': 'pomac@yandex.ru',
+							'address': "644007 г.Омск, ул.Октябрьская 188"
+						}
+					each val, key in items
+						li.main-footer__inner-item
+							a(href='temp.html' class="main-footer__inner-link")= val

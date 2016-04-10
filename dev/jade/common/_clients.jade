@@ -1,0 +1,15 @@
+.content__wrapper.content__wrapper_clients
+	svg(class="section__bg" viewBox="0 0 720 405" preserveAspectRatio="none")
+		path(class="slide__overlay-path" d="M0,30 720,0 720,405 0,380")
+	section(class="section section_clients" data-section="clients")
+		header.screen__header_clients#clients
+			h2.screen__title.screen__title_clients.screen__header
+				| Нам доверяют
+		.clients__content
+			| Здесь можно сказать пару слов о том, как мы ценим и любим наших постоянных клиентов.
+		.clients__wrap
+			ul.clients__list
+				-var items = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15']
+				each item in items
+					li(class='clients__link clients__link_' + item)
+	//- .background-bottom.background-bottom_clients

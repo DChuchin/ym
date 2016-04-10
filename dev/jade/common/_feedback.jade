@@ -1,0 +1,17 @@
+.content__wrapper.content__wrapper_feedback
+	svg(class="section__bg" viewBox="0 0 720 405" preserveAspectRatio="none")
+		path(class="slide__overlay-path" d="M0,30 720,0 720,405 0,405")
+	section(class="section section_feedback" data-section="feedback")
+		header.screen__header_feedback
+			h2.screen__title.screen__title_feedback.screen__header
+				| Хотите сделать заказ? Напишите нам
+		form.feedback__form#form
+			label.feedback__name-label
+				input(class="feedback__input feedback__input_name" placeholder="Как Вас зовут?" name="name")
+			label.feedback__label_email
+				input(class="feedback__input feedback__input_email" placeholder="Ваш Email" name="email")
+			label.feedback__label_text
+				textarea(class="feedback__input feedback__input_textarea" placeholder="Расскажите подробнее, что Вас интересует" name="text")
+			.submit__wrap
+				input(class="feedback__btn" type="submit" value="Отправить")
+	//- .background-bottom.background-bottom_feedback

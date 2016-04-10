@@ -1,0 +1,44 @@
+$biege: #f2eee2;
+$text: #282828;
+$yellow: #f5ce28;
+$cyan: #43c0f6;
+$magenta: #f81b84;
+.page-wrapper {
+	color: $text;
+	width: 100%;
+	min-height: 100%;
+	margin-bottom: -150px;
+	padding: 10px;
+	padding-bottom: 200px;
+	padding-top: 100px;
+	.menu {
+		top: 0;
+		left: 0;
+		position: fixed;
+		.menu__link_home {
+			text-indent: 0;
+		}
+	}
+}
+.page__title {
+	margin: 0;
+	padding: 10px 0;
+	border-bottom: 3px solid $cyan;
+	margin-bottom: 30px;
+}
+.outdoor__images-wrap {
+	img {
+		margin-right: 10px;
+	}
+	margin-bottom: 30px;
+}
+.page__content-text {
+	width: 80%;
+	font-size: 24px;
+	font-weight: 400;
+}
+.page__content {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+}

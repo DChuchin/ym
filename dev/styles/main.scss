@@ -1,0 +1,52 @@
+/*-------------- variables -----------------*/
+$biege: #f2eee2;
+$text: #282828;
+$yellow: #f5ce28;
+$cyan: #43c0f6;
+$magenta: #f81b84;
+
+
+/*------------- normalize.css ------------------*/
+@import "_misc/_normalize";
+
+/*-------------- adjustment --------------------*/
+
+@import "_misc/_adjustment.scss";
+
+@import "_misc/owl.carousel.min.scss";
+
+@import "_misc/owl.theme.default.min.scss";
+
+/*--------------- header ----------------*/
+@import "_common/_header";
+
+/*--------------- sidebar -----------------*/
+@import "_common/_sidebar.scss";
+
+/*-------------- slider ---------------------*/
+@import "_common/_slider.scss";
+
+/*---------------- services -------------------*/
+@import "_common/_services.scss";
+
+/*--------------contacts -------------*/
+@import "_common/_contacts.scss";
+
+/*-------------- buttonUp -------------------*/
+@import "_common/_buttnUp.scss";
+
+/*----------------- footer --------------------*/
+@import "_common/_footer.scss";
+
+/*-------------- clients -------------------*/
+@import "_common/_clients.scss";
+
+/*---------------- thanks ------------------*/
+@import "_common/_thanks.scss";
+
+/*--------------- feedback --------------------*/
+@import "_common/_feedback.scss";
+
+@import "_common/_temp.scss";
+
+@import "pages/outdoor.scss";

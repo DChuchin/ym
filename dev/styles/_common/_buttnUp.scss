@@ -1,0 +1,35 @@
+.button-up {
+	display: none;
+	z-index: 100;
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background: $cyan;
+	bottom: 40px;
+	right: 40px;
+	cursor: pointer;
+	box-shadow: 0 0 5px 0 #ffffff;
+	transition: background 0.2s, box-shadow 0.2s;
+
+	&:after {
+		cursor: pointer;
+		top: 25px;
+		right: 20px;
+		position: absolute;
+		content: '';
+		width: 20px;
+		height: 20px;
+		border-right: 2px solid #ffffff;
+		border-top: 2px solid #ffffff;
+		transform: rotate(-45deg); 
+	}
+
+	&:hover {
+		box-shadow: 0 0 5px 0 $cyan;
+		background: #ffffff;
+		&:after{
+			border-color:$cyan;
+		}
+	}
+}

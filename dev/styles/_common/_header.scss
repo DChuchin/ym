@@ -1,0 +1,158 @@
+.main-header {
+	background: linear-gradient(to bottom, rgba(20,20,20,0.5), transparent);		
+	position: absolute;
+	width: 100%;
+	height: 150px;
+	z-index: 100;
+
+}
+.header__container {
+	min-height: 100px;
+	margin: 0 auto;
+	padding: 20px 40px;
+
+
+}
+.main-logo {
+	float: left;
+	width: 150px;
+	height: 120px;
+	background: url('../img/ym-logo.svg') no-repeat;
+	background-size: contain;
+
+}
+.main-logo__text { 
+	text-indent: -9999px;
+	margin: 0;
+}
+.main-header__contacts {
+	float: right;
+}
+.mobile-contacts {
+	display: none;
+	color: #ffffff;
+	font-size: 40px;
+	cursor: pointer;
+	&:hover {
+		color:$yellow;
+	}
+}
+.phones {
+	vertical-align: baseline;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	margin-left: 40px;	
+	&:after {
+		position: absolute;
+		display: block;
+		top: 10px;
+		right: -19px;
+		content: '';
+		height: 30px;
+		width: 2px;
+		background: $magenta;
+	}
+	&:last-child {
+		&:after {
+			display: none;
+		}
+	}
+
+	a {	
+		display: block;
+		margin-bottom: 10px;
+		text-decoration: none;
+		color: #ffffff;
+		text-shadow: 0 1px 5px $text;
+		transition: text-decoration 0.2s, color 0.2s;
+		outline: none;
+		&:hover {
+			color: $yellow;
+		}
+	}
+}
+
+.addresses,
+.socials {
+	@extend .phones;
+}
+.socials {
+	a {
+		margin-bottom: 0;
+		font-size: 24px;
+
+	}
+}
+.mobile-menu {
+	display: none;
+	position: fixed;
+	transition: transform 0.3s;
+	top: 20px;
+	left: 20px;
+	z-index: 102;
+	cursor: pointer;
+	&:hover {;
+		.mobile-menu__link {
+			background:$yellow;	
+		}
+	}
+	&.open {
+		transform: rotate(270deg);
+		.mobile-menu__link {
+			background:$yellow;	
+		}
+		&:hover {
+			.mobile-menu__link {
+				background:#ffffff;	
+			}	
+		}
+	}
+}
+.mobile-menu__link {
+	height: 6px;
+	width: 35px;
+	margin-bottom: 5px;
+	background:#ffffff;
+}
+.main-header{
+	.contacts__sidebar_mobile {
+		width: 100%;
+		text-align: right;
+		padding-right: 80px;
+		height: 100%;
+		background:$text;
+		color:#ffffff;
+		position: fixed;
+		right: -100%;
+		transition: right 0.5s;
+		z-index: 99;
+		&.open {
+			right: 0;
+		}
+		a {
+			color:#ffffff;
+		}
+	}	
+}	
+
+@media screen and (max-width:900px) {
+	.mobile-menu {
+		display: block;
+	}
+	.main-logo {
+		display: block;
+		float: none;
+		margin: 0 auto;
+	}
+	.mobile-contacts {
+		display: block;
+		position: fixed;
+		right: 20px;
+		top: 20px;
+		z-index: 102;
+	}
+	.main-header__contacts {
+			display: none;
+	}
+}
