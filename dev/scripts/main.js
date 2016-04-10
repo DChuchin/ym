@@ -29,15 +29,16 @@ $(document).ready(function() {
 	}
 
 	$('.mobile-menu').on('click', function() {
-		$('.main-logo').fadeToggle(100);
 		$(this).toggleClass('open');
 		$('.menu').toggleClass('open');
+		$('.contacts__sidebar_mobile').removeClass('open');
 	})
 
 	$('.mobile-contacts').on('click', function() {
-		$('.main-logo').fadeToggle(100);
 		$(this).toggleClass('open');
 		$('.contacts__sidebar_mobile').toggleClass('open');
+		$('.menu').removeClass('open');
+		$('.mobile-menu').removeClass('open');
 	})
 	
 $('.clients__list').owlCarousel({
@@ -51,11 +52,11 @@ $('.clients__list').owlCarousel({
 	navText: '',
 	responsive:{
 		0:{
-			items:1,
+			items:2,
 			nav:true
 		},
 		600:{
-			items:3,
+			items:4,
 			nav:false
 		},
 		1000:{
@@ -72,6 +73,8 @@ $('.menu').on('click', function(e) {
 		console.log(e.target)
 		e.preventDefault();
 		showSection($(e.target).attr('href'), true);
+		$('.menu').toggleClass('open');
+		$('.mobile-menu').removeClass('open');
 	}
 });
 showSection(window.location.hash, false);
@@ -87,7 +90,7 @@ function showSection(section, isAnimate) {
 	 reqSection = $('.section').filter('[data-section="' + direction + '"]');
 	console.log('section',reqSection);
  if (reqSection.length) {
- 	var reqSectionPos = reqSection.offset().top - 70;    
+	var reqSectionPos = reqSection.offset().top - 70;    
 		 console.log(reqSection.offset().top);
 	 if (isAnimate) {
 		 $('body, html').animate({scrollTop: reqSectionPos}, 500);
@@ -103,7 +106,7 @@ function checkSection() {
 	$('.section').each(function() {
 		var
 			$this = $(this),
-			topEdge = $this.offset().top - 200,
+			topEdge = $this.offset().top - 800,
 			bottomEdge = topEdge + $this.height(),
 			wScroll = $(window).scrollTop();
 		if (topEdge < wScroll && bottomEdge > wScroll) {
@@ -115,6 +118,7 @@ function checkSection() {
 				.addClass('active')
 				.siblings()
 				.removeClass('active');
+			$('.section').filter('.section_' + currentId).css('opacity', '1');
 		}
 	});
 };
@@ -288,18 +292,17 @@ $(document).ready(function() {
 	
 });
 
-// $(document).ready(function(){
-//  $("#form").submit(function() { //устанавливаем событие отправки для формы с id=form
-//          var form_data = $(this).serialize(); //собераем все данные из формы
-//          $.ajax({
-//              type: "POST", //Метод отправки
-//              url: "send.php", //путь до php фаила отправителя
-//              data: form_data,
-//              success: function() {
-//                     //код в этом блоке выполняется при успешной отправке сообщения
-//                      alert("Ваше сообщение отпрвлено!");
-//                  })
-//          });
-//  });
-// });
+$(document).ready(function(){
+	$("#form").submit(function() { //устанавливаем событие отправки для формы с id=form
+		var form_data = $(this).serialize(); //собераем все данные из формы
+		$.ajax({
+			type: "POST", //Метод отправки
+			url: "send.php", //путь до php фаила отправителя
+			data: form_data,
+			success: function() {
+						alert("Ваше сообщение отпрвлено!");
+					}
+		});
+	});
+});
 

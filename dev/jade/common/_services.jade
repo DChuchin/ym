@@ -1,8 +1,8 @@
 .content__wrapper.content__wrapper_services
+	.img-wrapper
+		img(class="img-bg-left" src="common/img/colorsLeft.png")
+		img(class="img-bg-right" src="common/img/colorsRight.png")
 	section(class="section section_services" data-section="services")
-		.img-wrapper
-			img(class="img-bg-left" src="common/img/colorsLeft.png")
-			img(class="img-bg-right" src="common/img/colorsRight.png")
 		.main-wrapper
 			header.screen__header#services
 				h2.screen__title.screen__title_services
@@ -14,6 +14,7 @@
 					var items = ['Широкоформатная печать', 'Интерьерная печать', 'Изготовление флагов', 'Печать на ткани', 'Фрезерная резка', 'Монтаж рекламных конструкций', 'Цифровая печать', 'Изготовление рекламных конструкция', 'Печать на футболках', 'Плоттерная резка', 'Размещение рекламы', 'Дизайн']
 				each item, key in items
 					li.services__item
-						.services__img-wrap
-							a(class="services__link services__link_" + key href="outdoor.html")
-						.services__text= item
+						a(class="services__link services__link_" + key href="outdoor.html")
+							.services__img-wrap
+								img(src="//lorempixel.com/400/400/nature/" + key)
+							.services__text= item

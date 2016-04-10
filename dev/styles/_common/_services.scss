@@ -1,5 +1,6 @@
 .content__wrapper_services {
 	color: $text;
+	overflow: visible;
 }
 .main-wrapper {
 	position: relative;
@@ -23,7 +24,7 @@
 	height: auto;
 	width: auto;
 	top: 0;
-	left:-300px;
+	left:calc(-900px + 30%);
 	// transform: translate(0,-50%);
 }
 .img-bg-right {
@@ -32,7 +33,7 @@
 	height: auto;
 	width: auto;
 	bottom: 0;
-	right: -250px;
+	right: calc(-750px + 30%);
 	// transform: translate(0,-50%);
 }
 .screen__header {
@@ -91,25 +92,43 @@
 .services__item {
 	display: inline-block;
 	width: 200px;
+	height: 200px;
 	margin: 40px 20px;
+	box-shadow: 0 0 5px 0 $text;
 
 }
 .services__img-wrap {
+	position: relative;
 	overflow: hidden;
-	width: 200px;
-	height: 200px;
+	width: 100%;
+	height: 100%;
 	margin-bottom: 10px;
 	overflow: hidden;
+	img {
+		position: absolute;
+		min-height: 100%;
+		min-width: 100%;
+		height: auto;
+		width: auto;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		transition: all 0.3s;
+	}
 	// box-shadow: 0 0 5px 0 black;
 }
 .services__link {
+	position: relative;
 	display: block;
-	width: 200px;
-	height: 200px;
+	width: 100%;
+	height: 100%;
 	list-style: none;
-	background: url('../img/14.jpg') center;
-	transition: transform, 0.2s;
+	transition: all 0.3s;
+	text-decoration: none;
 	&:after {
+		position: absolute;
+		top: 0;
+		left: 0;
 		content: '';
 		display: block;
 		width: 100%;
@@ -120,16 +139,56 @@
 	}
 
 	&:hover {
-		transform: scale(1.1);
-
 		&:after {
 			opacity: 0;
 		}
-
+		img {
+			transform: scale(1.1) translate(-50%,-50%);
+		}
 	}
 }
 
 .services__text {
 	font-size: 20px;
 	text-align: center;
+	color: $text;
+	font-weight: 600;
+}
+@media screen and (max-width: 580px) {
+	.section_services {
+		.img-wrapper {
+			display: none;
+		}
+	}
+	.services__info {
+		&:after {
+			display: none;
+		}
+		margin-bottom: 30px;
+	}
+	.services__list {
+		margin-bottom: -65px;
+		padding: 0;
+		z-index: 10;
+	}
+	.services__item {
+		position: relative;
+		width: 100%;
+		margin: 0;
+	}
+	.services__link {
+		&:after {
+			display: none;
+		}
+	}
+	.services__text {
+		position: absolute;
+		top: 50%;;
+		transform: translateY(-50%);
+		width: 100%;
+		padding: 20px 0;
+		text-align: center;
+		background:rgba(245, 206, 40, 0.5);
+	}
+
 }

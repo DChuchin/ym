@@ -102,8 +102,18 @@
 	transition:background 0.2s, color 0.2s;
 	outline: none;
 	&:hover {
-				color: $cyan;
-			}
+		color: $cyan;
+		outline: none;
+	}
+	&:active {
+		outline: none;
+	}
+	&:focus {
+		outline: none;
+	}
+	&:visited {
+		outline: none;
+	}
 
 	&_home {
 		margin-left: 30px;
@@ -154,7 +164,7 @@
 		z-index: 99;
 		font-size: 26px;
 		left: -100%;
-		transition: left 0.3s;
+		transition: left 0.5s;
 		height: 100%;
 		&.open {
 			display: block;
@@ -179,5 +189,10 @@
 			text-indent: 0;
 			margin: 0;
 		}
+	}
+}
+@media screen and (max-height: 580px) {
+	.menu__link {
+		padding: 10px 5px;
 	}
 }
